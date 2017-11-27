@@ -7,7 +7,19 @@ import br.edu.univas.si8.ta.hello.rest.api.ShoppingService;
 
 @RequestScoped
 public class ShoppingServiceImpl implements ShoppingService{
-	@EJB(mappedName = "")
+	@EJB(mappedName = " java:app/hello-rest-ejb-0.1-SNAPSHOT/ShoppingBean!br.edu.univas.si8.ta.hello.ejb.interfaces.ShoppingRemote")
 	private Shopping shopping;
+
+	@Override
+	public String[] listVendasDescription() {
+	
+		return shopping.listVendaDescription();
+	}
+
+	@Override
+	public String saveNewVenda(String vendaDescription) {
+		shopping.createNewVenda(vendaDescription);
+		return "{\"message\": \"Success\"}";
+	}
 }
 
