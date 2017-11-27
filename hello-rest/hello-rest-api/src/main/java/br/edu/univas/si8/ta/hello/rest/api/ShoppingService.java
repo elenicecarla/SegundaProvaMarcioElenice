@@ -1,5 +1,7 @@
 package br.edu.univas.si8.ta.hello.rest.api;
 
+import java.util.Date;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -17,5 +19,5 @@ public interface ShoppingService {
 	@POST
 	@Path("order/add/{description}")
 	@Produces(MediaType.APPLICATION_JSON)
-	String saveNewVenda(@PathParam("description") String description);
+	String saveNewVenda(@PathParam("description") String description, @PathParam("date") Date date);
 }

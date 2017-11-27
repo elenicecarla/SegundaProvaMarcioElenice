@@ -22,7 +22,7 @@ public class ShoppingBean implements ShoppingLocal, ShoppingRemote {
 	private VendaDAO dao;
 
 	@Override
-	public void createNewVenda(String vendaDescription) {
+	public void createNewVenda(String vendaDescription, Date date) {
 		Venda venda = new Venda();
 		venda.setDescription(vendaDescription);
 		venda.setDate(new Date());
