@@ -2,6 +2,7 @@ package br.edu.univas.si8.ta.hello.ejb.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +18,7 @@ public class Venda {
 	@GeneratedValue(generator = "seq_shopping_order", strategy = GenerationType.SEQUENCE)
 	private Integer id;
 	private String description;
+	@Column(name="order_time")
 	private Date date;
 	
 	public Integer getId() {
@@ -32,7 +34,7 @@ public class Venda {
 		this.description = description;
 	}
 	public Date getDate() {
-		return new Date();
+		return date;
 	}
 	public void setDate(Date date) {
 		this.date = date;

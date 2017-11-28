@@ -18,11 +18,9 @@ public class ShoppingServiceImpl implements ShoppingService{
 	}
 
 	@Override
-	public String saveNewVenda(String description, Date date) {
-		shopping.createNewVenda(description, date);
+	public String saveNewVenda(String description) {
+		shopping.createNewVenda(description);
 		return "{\"message\": \"Success\"}";
 	}
-
-
 }
 
